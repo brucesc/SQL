@@ -29,7 +29,6 @@ update class set
 Description = Description + ' 301'
 where id in (7, 8)
 
--- select * from class
--- where id in (select id from class where
+--select * from class where id in (select id from class where charindex('Economics', description) > 0)
 
 select * from Class
