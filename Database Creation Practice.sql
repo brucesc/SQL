@@ -124,3 +124,6 @@ Insert into Employee (FirstName, LastName, Birthday, Job, ManagerId)
 	Values ('Nathan', 'McCue', '1989-1-1', 'Essential', '6')
 Insert into Employee (FirstName, LastName, Birthday, Job, ManagerId)
 	Values ('David', 'Haines', '1989-1-1', 'Essential', '7')
+
+select * from Employee
+order by Employee.LastName

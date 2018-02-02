@@ -130,10 +130,28 @@ join Manager m
 join Department d
 	on d.Id = m.DepartmentId
 
-select concat(e.FirstName, ' ', e.LastName) as 'Employee', Birthday, Job, concat(m.FirstName, ' ', m.LastName) as 'Manager',
-d.Name as 'Department', d.CostCenter
+-- How would you provide the number of people in their respective departments?
+select d.Name as 'Department', count(*) as 'Employee Count'
 	From Employee e
 	join Manager m
 		on m.id = e.ManagerId
 	join Department d
 		on d.Id = m.DepartmentId
+group by D.Name
+
+/* As I see it, count represents itself in a Results Set as its own column. Select d.Name (the table alias tied to the column name we want to count),
+count(*) count all of this column, from Employee e
+*/
+select d.Name
+	--, count(*) 'Employee count' 
+	from Employee e
+	join manager m
+		on m.id = e.ManagerId
+	join Department d
+		on m.DepartmentId = d.Id
+		--group by d.Name
+	order by d.Name
+
+
+select * from Department
+select * from Manager
